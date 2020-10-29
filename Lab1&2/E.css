@@ -1,0 +1,16 @@
+.column {
+    float: left;
+    width: 45%;
+    margin:0 2.5%;
+  }
+
+.row:after {
+    content: "Some content";
+    display: inline;
+    clear: right;
+}
+
+img {
+    width: 150px;
+    float: right;
+}

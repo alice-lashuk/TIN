@@ -1,0 +1,39 @@
+input[type=text] {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 14px;
+}
+input[type=password] {
+    font-size: 15px;
+}
+
+input[type=submit] {
+    font-family:  "Comic Sans MS", cursive, sans-serif;
+    font-size: 17px;
+}
+
+input[type=reset] {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+}
+
+select {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+}
+
+textarea {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+}
+
+label {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 16px;
+    color: green;
+}
+
+label#req{
+    color: red;
+}
+
+

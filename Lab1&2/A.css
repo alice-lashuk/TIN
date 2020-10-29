@@ -1,0 +1,25 @@
+p {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 14px;
+  }
+h1 {
+    font-family: "Impact", Charcoal, sans-serif;
+}
+
+table, th, td {
+    border: 1px solid mediumaquamarine;
+    border-style: dotted;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+ul {
+    list-style-type: square;
+        
+}
+
+a {
+    text-decoration: none;
+}
