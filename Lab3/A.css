@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@300&display=swap');
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header img {
+    border-radius: 25px;
+    box-shadow: 10px 5px 5px grey;
+    transform: rotate(15deg);
+    max-width: 20%;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+figure img {
+    height: 170px;
+    width: 300px;
+}
+p img {
+    max-width: 50%;
+    float: left;
+    margin: 10px;
+}
+
+.text p{
+    width: 250px;
+    min-width: 200px;
+    margin: 5px;
+    flex: 0 0 20%;
+}
+
+.text {
+    display: inline-flex;
+    flex-flow: row wrap; 
+    justify-content: flex-start;
+}
+
+span {
+    color: blueviolet;
+    font-size: 20px;
+    float: right;
+    margin: 15px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+  
+p, figcaption {
+    font-family: 'Itim', cursive;
+}
+
+h1, span {
+    font-family: 'Trispace', sans-serif;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .text {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .content p {
+        width: 100%;
+    }
+}
+
