@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Calculator</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <p>Calculator</p>
+    <form action="/calculate" method="post" id ="cal-form">
+        <input type="number" name="num1" id="num1">
+        <input type="number" name="num2" id="num2">
+        <select name="types" id="types">
+            <option value="MUL">Multiply</option>
+            <option value="ADD">Add</option>
+            <option value="DIV">Divide</option>
+            <option value="SUB">Subtract</option>
+          </select>
+          <button type="submit" id="sub_btn">Submit</button>  
+    </form>
+    <p id = "result"></p>
+</body>
+</html>
