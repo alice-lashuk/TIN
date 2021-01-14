@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Converter</title>
+</head>
+<body>
+    <form method="post" id="converter" action="/dist">
+        <input type="number" name="input" id="num"><br><br>
+        <input type="radio" id="miles" name="type" value="miles">
+        <label for="miles">miles -> km</label><br><br>
+        <input type="radio" id="km" name="type" value="km">
+        <label for="km">km -> miles</label><br><br>
+        <button type="sumbit" id="convert">Convert</button><br><br>
+    </form>
+    <form>
+        <button type="submit" formaction="/main">Back</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<head>
+    <title>Converter</title>
+</head>
+<body>
+    <form method="post" id="converter" action="/temp">
+        <input type="number" name="input" id="num"><br><br>
+        <input type="radio" id="F" name="type" value="fahrenheit">
+        <label for="F">from Fahrenheit</label><br><br>
+        <input type="radio" id="K" name="type" value="kelvin">
+        <label for="K">from Kelvin</label><br><br>
+        <input type="radio" id="C" name="type" value="celsius">
+        <label for="C">from Celsius</label><br><br>
+        <button type="sumbit" id="convert">Convert</button><br><br>
+        
+    </form>
+    <form>
+        <button type="submit" formaction="/main">Back</button>
+    </form>
+</body>
+</html>
