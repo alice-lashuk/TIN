@@ -1,0 +1,65 @@
+{
+    "menu.label": "Menu",
+    "add_to_table.label": "Add to Table",
+    "delete_table.label":"Delete Table",
+    "show_table.label":"Show Table",
+    "update_table.label":"Update Table",
+
+    "logout.label":"Log out",
+    "register.label":"Register",
+    "login.label":"Log in",
+    "home.label":"Home", 
+
+    "email.label": "Email",
+    "password.label": "Password",
+
+
+    "customer_name.label": "Customer name",
+    "customer_surname.label": "Customer surname",
+    "customer_id.label":"Customer Id",
+
+    "date_of_birth.label": "Date Of Birth",
+
+    "add.label": "Add",
+    "go_back.label": "Go Back",
+    "delete_btn.label":"Delete",
+
+    "item_id.label":"Item Id",
+    "item_name.label":"Item name",
+    "item_description.label":"Item Description",
+    "seller.label":"Seller",
+    "customer.label":"Customer",
+    "item.label":"Item",
+    "amount.label":"Amount",
+
+    "seller_name.label":"Seller Name",
+    "seller_surname.label":"Seller Surname",
+    "seller_date.label":"Seller Date Of Birth",
+    "seller_position.label":"Position",
+
+    "delete_warning.label": "Keep in mind that all related records will also be deleted!!!",
+
+    "en.label":"English",
+    "rus.label":"Russian",
+
+    "order_id.label":"Order Id",
+    "seller_id.label":"Seller Id",
+
+    "update_message1.label":"Insert data based on which you want to update table",
+    "update_message2.label":"Insert data into fields you want to update",
+    "update_btn.label":"Update",
+
+    "name.label":"Name",
+    "surname.label":"Surname",
+    "admin.label":"Admin",
+
+    "please_select_table.label":"Please select Table",
+    "order.label":"Order",
+    "select_delete.label":"Please select table to Delete from",
+    "select_update.label":"Please select table to Update",
+    "show_info.label":"Show informstion",
+    "show_detailed_info.label":"Show detailed information",
+
+    "previous.label":"Previous",
+    "next.label":"Next"
+}

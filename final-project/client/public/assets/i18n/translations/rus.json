@@ -1,0 +1,66 @@
+{
+    "menu.label": "Меню",
+    "add_to_table.label": "Добавить в таблицу",
+    "delete_table.label":"Удалить из Таблицы",
+    "show_table.label":"Показать таблицу",
+    "update_table.label":"Обновить таблицу",
+
+    "logout.label":"Выйти",
+    "register.label":"Зарегистрироваться",
+    "login.label":"Войти",
+    "home.label":"Главная", 
+
+    "email.label": "Email",
+    "password.label": "Пароль",
+
+
+    "customer_name.label": "Имя клиента",
+    "customer_surname.label": "Фамилия Клиента",
+    "customer_id.label":"Id Клиента",
+
+    "date_of_birth.label": "Дата Рождения",
+
+    "add.label": "Добавить",
+    "go_back.label": "Назад",
+    "delete_btn.label":"Удалить",
+
+    "item_id.label":"Id предмета",
+    "item_name.label":"Имя Предмета",
+    "item_description.label":"Описание Предмета",
+    "seller.label":"Продавец",
+    "customer.label":"Покупатель",
+    "item.label":"Предмет",
+    "amount.label":"Количество",
+
+    "seller_name.label":"Имя Продавца",
+    "seller_surname.label":"Фамилия Продавца",
+    "seller_date.label":"Дата рождения Продавца",
+    "seller_position.label":"Должность",
+
+    "delete_warning.label": "Имейте в виду что все связанные записи будут также удалены!!!",
+
+    "en.label":"Английский",
+    "rus.label":"Русский",
+
+
+    "order_id.label":"Id Заказа",
+    "seller_id.label":"Id Продавца",
+
+    "update_message1.label":"Введите данные на основе которых вы хотите обновить таблицу",
+    "update_message2.label":"Введите данные которые вы хотите обновить",
+    "update_btn.label":"Обновить",
+
+    "name.label":"Имя",
+    "surname.label":"Фамилия",
+    "admin.label":"Админ",
+
+    "please_select_table.label":"Пожалуйста выберите таблицу",
+    "order.label":"Заказ",
+    "select_delete.label":"Выберите таблицу для которой удалить",
+    "select_update.label":"Выберите таблицу для обновления",
+    "show_info.label":"Показать информацию",
+    "show_detailed_info.label":"Показать подробную информацию",
+
+    "previous.label":"След.",
+    "next.label":"Пред."
+}
