@@ -107,13 +107,14 @@ class Delete extends React.Component {
       return <DeleteOrderForm change = {this.handleInputChange} submit = {this.submitForm}/>
     }
     getBackButton(goBack) {
-      return  <Button variant="primary" href = '/'>{goBack}</Button>
+      return <Button variant="dark" href = '/'>{goBack}</Button>
     }
 
     render() {
       const { t } = this.props;
       let form = "";
       let response = this.state.apiResponse;
+      console.log(response);
       let tName = this.state.tableName;
       let title = "";
       let goBack = "";
@@ -123,19 +124,19 @@ class Delete extends React.Component {
       switch(tName) {
         case 'Customer':
           form = this.showCustomerForm();
-          title = "Please enter values based on which you want to delete records from Table Customer";
+          title = this.props.t('delete_msg_customer.label');
           break;
         case 'Seller':
           form = this.showSellerForm();
-          title = "Please enter values based on which you want to delete records from Table Seller";
+          title = this.props.t('delete_msg_seller.label');
           break;
         case 'Customer_order':
           form = this.showOrderForm();
-          title = "Please enter values based on which you want to delete records from Table Order";
+          title = this.props.t('delete_msg_order.label');
           break;
         case 'Item':
           form = this.showItemForm();
-          title = "Please enter values based on which you want to delete records from Table Item";
+          title = this.props.t('delete_msg_item.label');
           break;
         default:
           break;
@@ -144,16 +145,16 @@ class Delete extends React.Component {
           <div>
             <header>
             </header>
+            <div>{response}</div>
                 <select title="Select table" onChange={this.showForm}>
                     <option value="">{t('select_delete.label')}</option>
                     <option value="Customer">{t('customer.label')}</option>
                     <option value ="Customer_order">{t('order.label')}</option>
                     <option value ="Item">{t('item.label')}</option>
                     <option value ="Seller">{t('seller.label')}</option>
-                </select>
-            {title}
+                </select>&nbsp;
+              <div>{title}</div>
             {form}
-            {response}
             {goBack}
           </div>
         );  

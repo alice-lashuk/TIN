@@ -1,6 +1,32 @@
 .App {
   text-align: center;
 }
+
+.form {
+  text-align: center;
+  width: 30rem;
+  /* margin-bottom: 40px; */
+}
+
+.container-layout {
+    display: flex;
+    height: 100vh;
+    padding-top: 20px;
+    width: 100vw;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* .container {
+  margin: 30px;
+  padding: 2rem;
+  max-width: 60rem;
+  text-align: center;
+} */
 /*
 
 .App-logo {

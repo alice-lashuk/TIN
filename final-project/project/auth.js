@@ -23,12 +23,12 @@ r.post('/login', async function(req, res) {
             {
                 expiresIn: 60*60*30
             });
-            // res.set("jwt_token", token);
             const isAdmin = result[0].IsAdmin;
             const response = {"msg" : "success", "jwt_token": token, "isAdmin": isAdmin};
             res.send(response);
         } else {
-            res.send("oops");
+            const failed = {"msg":"oops"};
+            res.send(failed);
         }    
     });
     
@@ -84,8 +84,6 @@ async function checkIfEmailExists(email) {
         } else {
             return true;
         }
-        console.log("1 record inserted");
-            // return "1 record inserted into table Customer"
     } catch(err) {
         console.log(err);
     } finally {

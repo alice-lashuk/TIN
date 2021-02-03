@@ -77,12 +77,18 @@ async function getCustomersOrdersJSON(listOfCustomers, res) {
     let cusotmerJson = [];
     for (const element of listOfCustomers) {
         const orders = await getOrder(element.IdCustomer, orderCustomerString);
+        let date = element.DateOfBirth;
+        if(element.DateOfBirth!= null){
+            let d = element.DateOfBirth.toISOString().split('T')[0];
+            date = d;
+        }
+        
         cusotmerJson.push(
             {
                 name: element.CName,
                 surname: element.CSurname,
                 id: element.IdCustomer,
-                dateOfBirth: element.DateOfBirth,
+                dateOfBirth: date,
                 cOrders: orders
             }
         );
@@ -110,12 +116,17 @@ async function getSellerOrdersJSON(listOfSellers, res) {
     let sellerJson = [];
     for (const element of listOfSellers) {
         const orders = await getOrder(element.IdSeller, orderSellerString);
+        let date = element.SDateOfBirth;
+        if(element.SDateOfBirth!= null){
+            let d = element.SDateOfBirth.toISOString().split('T')[0];
+            date = d;
+        }
         sellerJson.push(
             {
                 name: element.SName,
                 surname: element.SSurname,
                 id: element.IdSeller,
-                dateOfBirth: element.SDateOfBirth,
+                dateOfBirth: date,
                 position: element.SPosition,
                 orders: orders
             }

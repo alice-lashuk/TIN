@@ -61,5 +61,12 @@
     "show_detailed_info.label":"Show detailed information",
 
     "previous.label":"Previous",
-    "next.label":"Next"
+    "next.label":"Next",
+    "future_date.label":"Date is in the future! Please enter valid Date",
+    "delete_msg_customer.label": "Please enter values based on which you want to delete records from Table Customer",
+    "delete_msg_order.label": "Please enter values based on which you want to delete records from Table Order",
+    "delete_msg_item.label": "Please enter values based on which you want to delete records from Table Item",
+    "delete_msg_seller.label": "Please enter values based on which you want to delete records from Table Seller",
+
+    "orders.label": "Orders:"
 }

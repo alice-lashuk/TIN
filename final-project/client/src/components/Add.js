@@ -22,7 +22,6 @@ class Add extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.checkDate = this.checkDate.bind(this);
         this.getBackButton = this.getBackButton.bind(this);
-        // this.changeLanguage = this.changeLanguage(this);
     }
     callApi(data) {
       const request = {
@@ -86,7 +85,7 @@ class Add extends React.Component {
           if(dateCorrect) {
             this.sendCutomer();
           } else {
-            alert("Date is in the future! Please enter valid Date ");
+            alert(this.props.t('future_date.label'));
           }
           break;
         case 'Seller':
@@ -94,7 +93,7 @@ class Add extends React.Component {
           if(dateCorrect) {
             this.sendSeller();
           } else {
-            alert("Date is in the future! Please enter valid Date");
+            alert(this.props.t('future_date.label'));
           }
           break;
         case 'Customer_order':
@@ -143,7 +142,7 @@ class Add extends React.Component {
       return <OrderForm change = {this.handleInputChange} submit = {this.submitForm}/>
     }
     getBackButton(goBack) {
-      return  <Button variant="primary" href = '/'>{goBack} </Button>
+      return  <Button variant="dark" href = '/'>{goBack} </Button>
     }
 
     render() {
@@ -181,9 +180,9 @@ class Add extends React.Component {
                     <option value ="Customer_order">{t('order.label')}</option>
                     <option value ="Item">{t('item.label')}</option>
                     <option value ="Seller">{t('seller.label')}</option>
-                </select>
+                </select>&nbsp;
+                <div>{response}</div>
             {form}
-            {response}
             {goBack}
           </div>
         );  

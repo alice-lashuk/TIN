@@ -134,7 +134,7 @@ class Update extends React.Component {
       return <UpdateOrderForm change = {this.handleInputChange} submit = {this.submitForm}/>
     }
     getBackButton(goBack) {
-      return  <Button variant="primary" href = '/'>{goBack} </Button>
+      return  <Button variant="dark" href = '/'>{goBack} </Button>
     }
 
     render() {
@@ -166,15 +166,15 @@ class Update extends React.Component {
           <div>
             <header>
             </header>
+            <div>{response}</div>&nbsp;
                 <select title="Select table" onChange={this.showForm}>
                     <option value="">{t('select_update.label')}</option>
                     <option value="Customer">{t('customer.label')}</option>
                     <option value ="Customer_order">{t('order.label')}</option>
                     <option value ="Item">{t('item.label')}</option>
                     <option value ="Seller">{t('seller.label')}</option>
-                </select>
+                </select>&nbsp;
             {form}
-             {response}
             {goBack}
           </div>
         );  

@@ -1,4 +1,4 @@
-import React,{S} from 'react';
+import React from 'react';
 import LoginForm from './Forms/LoginForm';
 import {Redirect} from "react-router-dom";
 
@@ -23,7 +23,9 @@ class Login extends React.Component {
         .then(res => {
           console.log(res);
           console.log(res.msg);
+          console.log(res.jwt_token);
           localStorage.setItem("jwt_token", res.jwt_token);
+          localStorage.setItem("is_token", res.is_token);
           localStorage.setItem("isAdmin",res.isAdmin);
           return res.msg;
         })
@@ -59,9 +61,14 @@ class Login extends React.Component {
               state: { msg: "You successfully loged in"}
             }}/>
       } else {
-        if(this.props.location.state) {
-          msg =  this.props.location.state.msg;
-      }
+     
+        if(this.state.apiResponse === "oops") {
+          msg = "incorrect password or email";
+        }
+        if(this.props.location.state && this.props.location.state.msg === "reg"){
+          msg = "You successfully registered, please login";
+
+        }
         return (
           <div>
             <header>
@@ -71,7 +78,7 @@ class Login extends React.Component {
           </div>
         );  
       }
-  }
+    }
 }
 
 export default Login;

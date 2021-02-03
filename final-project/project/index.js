@@ -11,8 +11,7 @@ const displayRouter = require('./display');
 const deleteRouter = require('./delete');
 const updateRouter = require('./update');
 const authRouter = require('./auth');
-const passportLocal = require("passport-local").Strategy;
-// const cookieParser = require("cookie-parser");
+// const passportLocal = require("passport-local").Strategy;
 const flash = require('express-flash');
 const session = require('express-session');
 const cors = require("cors");
@@ -27,7 +26,6 @@ app.use(session({
 }));
 app.use(passport.initialize())
 app.use(passport.session())
-// app.use(cookieParser("secret"));
 app.use(cors());
 app.use('/main', mainRouter);
 app.use('/add', addRouter);

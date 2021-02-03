@@ -15,8 +15,7 @@ const ProtectedRouterAdmin = ({ component: Component, ...rest }) => (
       !!localStorage.getItem("jwt_token") && localStorage.getItem("isAdmin") == 1
         ? <Component {...props} />
         : <Redirect to={{
-            pathname: "/",
-            state: { msg: "Please log in or re login with the permission of Admin"}
+            pathname: "/"
           } }/>
     )}/>
 )

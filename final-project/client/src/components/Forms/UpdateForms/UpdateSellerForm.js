@@ -3,6 +3,10 @@ import { withTranslation } from 'react-i18next';
 function UpdateSellerForm(props) {
     let t = props.t;
     return (
+      <div class="container-layout">
+    <div className="container">
+    <div className="d-flex justify-content-center">
+    <div class="form">
       <Form onSubmit={props.submit}>
             <Form.Text>
             {t('update_message1.label')}
@@ -45,14 +49,18 @@ function UpdateSellerForm(props) {
         <Form.Group controlId="formPositionNew">
           <Form.Label>{t('seller_position.label')}</Form.Label>
           <Form.Control type="text" name="newSPosition" placeholder="Enter new position" onChange={props.change} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        </Form.Group>&nbsp;
+        <Button variant="dark" type="submit">
         {t('go_back.label')}
-        </Button>
-        <Button variant="primary" href = '/'>
+        </Button>&nbsp;
+        <Button variant="dark" href = '/'>
         {t('go_back.label')}
       </Button>
       </Form>
+      </div>
+    </div>
+    </div>
+    </div>
     );
 }
 export default withTranslation()(UpdateSellerForm);

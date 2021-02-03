@@ -35,6 +35,7 @@ class MainMenu extends React.Component {
         if(this.props.location.state) {
             this.setMsg();
         }
+        console.log(this.state.msg);
 
         if(this.state.msg === "success") {
             window.location.reload();

@@ -3,6 +3,10 @@ import { withTranslation } from 'react-i18next';
 function SellerForm(props) {
     const t = props.t;
     return (
+      <div class="container-layout">
+    <div className="container">
+    <div className="d-flex justify-content-center">
+    <div class="form">
       <Form onSubmit={props.submit}>
         <Form.Group controlId="formName">
           <Form.Label>{t('seller_name.label')}</Form.Label>
@@ -19,14 +23,18 @@ function SellerForm(props) {
         <Form.Group controlId="formPosition">
           <Form.Label>{t('seller_position.label')}</Form.Label>
           <Form.Control type="text" name="SPosition" placeholder="Enter position" onChange={props.change} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        </Form.Group>&nbsp;
+        <Button variant="dark" type="submit">
         {t('add.label')}
-        </Button>
-        <Button variant="primary" href = '/'>
+        </Button>&nbsp;
+        <Button variant="dark" href = '/'>
         {t('go_back.label')}
       </Button>
       </Form>
+      </div>
+      </div>
+      </div>
+      </div>
     );
 }
 

@@ -24,6 +24,7 @@ class App extends React.Component {
 
   Logout() {
     localStorage.removeItem("jwt_token");
+    localStorage.removeItem("is_token");
   }
 
   render() {

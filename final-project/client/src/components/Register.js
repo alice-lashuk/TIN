@@ -51,7 +51,7 @@ class Register extends React.Component {
         if(this.state.apiResponse === "success") {
             return <Redirect to={{
                 pathname: "/login",
-                state: { msg: "You successfully registered, please login" }
+                state: { msg: "reg" }
               }}/>
         } else {
         return (

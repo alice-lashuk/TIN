@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 function Pagination (props) {
@@ -20,7 +20,7 @@ function Pagination (props) {
                     </li>
                 ))}
                 <li className="page-item">
-                    <a className="page-link" href="#" onClick={() => props.nextPage(props.current, props.l)}>{t('next.label')}</a>
+                    <a className="page-link" href="#" onClick={() => props.nextPage(props.current, props.l, props.perPage)}>{t('next.label')}</a>
                 </li>
             </ul>
         </nav>

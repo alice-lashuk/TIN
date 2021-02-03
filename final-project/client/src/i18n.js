@@ -15,13 +15,10 @@ i18n
   .use(initReactI18next)
   .init({
     lng,
-    // lng: 'en',
     backend: {
-      /* translation file path */
       loadPath: '/assets/i18n/{{ns}}/{{lng}}.json',
       allowMultiLoading: true
     },
-    // fallbackLng: 'en',
     debug: true,
     ns: ['translations'],
     defaultNS: 'translations',

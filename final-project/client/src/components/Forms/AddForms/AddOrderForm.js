@@ -3,6 +3,10 @@ import { withTranslation } from 'react-i18next';
 function Order(props) {
   const t = props.t;
     return (
+      <div class="container-layout">
+    <div className="container">
+    <div className="d-flex justify-content-center">
+    <div class="form">
       <Form onSubmit={props.submit}>
         <Form.Group controlId="formSeller">
           <Form.Label> {t('seller.label')}</Form.Label>
@@ -19,14 +23,18 @@ function Order(props) {
         <Form.Group controlId="formAmount">
           <Form.Label> {t('amount.label')}</Form.Label>
           <Form.Control required type="number"  min="1" name="Amount" defaultValue="1" placeholder="Enter amount" onChange={props.change} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        </Form.Group>&nbsp;
+        <Button variant="dark" type="submit">
         {t('add.label')}
-        </Button>
-        <Button variant="primary" href = '/'>
+        </Button>&nbsp;
+        <Button variant="dark" href = '/'>
         {t('go_back.label')}
       </Button>
       </Form>
+      </div>
+      </div>
+      </div>
+      </div>
     );
 }
 

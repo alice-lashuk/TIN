@@ -1,16 +1,20 @@
 import React from 'react';
 import { Button, Form} from 'react-bootstrap';
-import {Customer, CustomerDetails} from './Customer';
-import {Seller, SellerDetails} from './Seller';
-import {Item, ItemDetails} from './Item';
-import {Order} from './Order';
+import SellerDetails from './DisplayLayouts/SellersDetails';
+import Customers from './DisplayLayouts/Customers';
+import CustomersDetails from './DisplayLayouts/CustomersDetails';
+import Orders from './DisplayLayouts/Orders';
+import Items from './DisplayLayouts/Items';
+import ItemsDetails from './DisplayLayouts/ItemsDetails'
+import Sellers from './DisplayLayouts/Sellers';
 import Pagination from './Pagination';
 import { withTranslation } from 'react-i18next';
+
 
 class Display extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {tableName:'', apiResponse: [], details: '', posts: [], currentPage: 1, postsPerPage: 2};
+        this.state = {tableName:'', apiResponse: [], details: '', posts: [], currentPage: 1, postsPerPage: 4, postPerPageDetails:1 };
         this.sumbitForm = this.sumbitForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.showCustomer = this.showCustomer.bind(this);
@@ -24,8 +28,7 @@ class Display extends React.Component {
         this.resetPagination = this.resetPagination.bind(this);
     }
 
-    callApi(details) {
-        
+    callApi(details) {  
         const request = {
             json: true,
             method: 'POST',
@@ -67,43 +70,22 @@ class Display extends React.Component {
     }
 
     showCustomer(info) {
-        let records = info.map((customer) => (
-            <Customer
-                name={customer.CName}
-                surname={customer.CSurname}
-            />
-        ));
+        let records = <Customers info={info}/>
         return records;
     }
 
     showCustomerDetails(info) {
-        let records = info.map((customer) => (
-            <CustomerDetails
-                id={customer.id} 
-                name={customer.name}
-                surname={customer.surname}
-                dateOfBirth={customer.dateOfBirth}
-                orders = {customer.cOrders}
-            />
-        ));
-
+        let records = <CustomersDetails info={info}/>
         return records;
     }
 
     showItemDetails(info) {
-        let records = info.map((item) => (
-            <ItemDetails
-                id={item.id}
-                name={item.name}
-                description={item.description}
-                orders={item.orders}
-            />
-        ));
+        let records = <ItemsDetails info={info}/>
         return records;
     }
 
-    showNextPage(current, length) {
-        if(current < length/2) {
+    showNextPage(current, length, perPage) {
+        if(current < length/perPage) {
             this.setState({ currentPage: current + 1 });
         }
     }
@@ -111,6 +93,7 @@ class Display extends React.Component {
     showPage(pageNum) {
         this.setState({currentPage: pageNum})
     }
+
     showPrevPage(current) {
         if(current > 1) {
             this.setState({ currentPage: current - 1 });
@@ -118,7 +101,7 @@ class Display extends React.Component {
     }
 
     showPagination(postsPerPage, length, currentPage) {
-        let pagination = <Pagination 
+        return <Pagination 
             perPage={postsPerPage}
             l = {length}
             current = {currentPage}
@@ -126,53 +109,22 @@ class Display extends React.Component {
             prevPage = {this.showPrevPage}
             paginate = {this.showPage}
         />
-        return pagination;
     }
 
     showSellerDetails(info) {
-        let records = info.map((seller) => (
-            <SellerDetails
-                id={seller.id}
-                name={seller.name}
-                surname={seller.surname}
-                dateOfBirth={seller.dateOfBirth}
-                position={seller.position}
-                orders={seller.orders}
-            />
-        ));
-        return records;
+        return <SellerDetails info={info}/>;
     }
 
     showSeller(info) {
-        let records = info.map((seller) => (
-            <Seller
-                name={seller.SName}
-                surname={seller.SSurname}
-            />
-        ));
-        return records;
+        return <Sellers info={info}/>
     }
 
     showItem(info) {
-        let records = info.map((item) => (
-            <Item
-                name={item.IName}
-            />
-        ));
-        return records;
+        return <Items info={info}/>
     }
 
     showOrder(info) {
-        let records = info.map((order) => (
-            <Order
-                id={order.IdOrder}
-                item={order.IName}
-                customer={order.CName}
-                amount={order.Amount}
-                seller={order.SName}
-            />
-        ));
-        return records;
+        return <Orders info={info}/>
     }
 
     render() {
@@ -185,51 +137,65 @@ class Display extends React.Component {
         const indexOfLastPost = currentPage * postsPerPage;
         const indexOfFirstPost = indexOfLastPost - postsPerPage;
         const currentPosts = response.slice(indexOfFirstPost, indexOfLastPost);
+
+        const postsPerPage1 = this.state.postPerPageDetails;
+        const indexOfLastPost1 = currentPage * postsPerPage1;
+        const indexOfFirstPost1 = indexOfLastPost1 - postsPerPage1;
+        const currentPosts1 = response.slice(indexOfFirstPost1, indexOfLastPost1);
         if(response.length) {
             if(this.state.tableName === "Customer") {
                 if(this.state.details === true) {
-                    records = this.showCustomerDetails(currentPosts);
+                    records = this.showCustomerDetails(currentPosts1);
+                    pagination = this.showPagination(postsPerPage1, response.length, currentPage);
                 } else {
                     records = this.showCustomer(currentPosts);
+                    pagination = this.showPagination(postsPerPage, response.length, currentPage);
                 }
             } else if(this.state.tableName === "Seller") {
                 if(this.state.details === true) {
-                    records = this.showSellerDetails(currentPosts);
+                    records = this.showSellerDetails(currentPosts1);
+                    pagination = this.showPagination(postsPerPage1, response.length, currentPage);
                 } else {
                    records = this.showSeller(currentPosts);
+                   pagination = this.showPagination(postsPerPage, response.length, currentPage);
                 }
             } else if(this.state.tableName === "Item") {
                 if(this.state.details === true) {
-                    records = this.showItemDetails(currentPosts);
+                    records = this.showItemDetails(currentPosts1);
+                    pagination = this.showPagination(postsPerPage1, response.length, currentPage);
                 } else {
                     records = this.showItem(currentPosts);
-                    
+                    pagination = this.showPagination(postsPerPage, response.length, currentPage);
                 }
             } else if (this.state.tableName === "Customer_order") {
                 records = this.showOrder(currentPosts);
+                pagination = this.showPagination(postsPerPage, response.length, currentPage);
             }
-            pagination = this.showPagination(postsPerPage, response.length, currentPage);
         }    
         
         return (
             <div>
             <Form onSubmit={this.sumbitForm}>
-                <select title="Select table" class="selectpicker" onChange={this.handleChange}>
+                <select title="Select table" onChange={this.handleChange}>
                     <option value="">{t('please_select_table.label')}</option>
                     <option value="Customer">{t('customer.label')}</option>
                     <option value ="Customer_order">{t('order.label')}</option>
                     <option value ="Item">{t('item.label')}</option>
                     <option value ="Seller">{t('seller.label')}</option>
                 </select>
-            <Button variant="primary" type="submit">
+                &nbsp;
+                &nbsp;
+                <div>
+            <Button variant="dark" type="submit">
             {t('show_info.label')}
-            </Button>
-              <Button variant="primary" onClick={this.alternativeSubmit}>
+            </Button>&nbsp;
+              <Button variant="dark" onClick={this.alternativeSubmit}>
               {t('show_detailed_info.label')}
-            </Button>
-            <Button variant="primary" href = '/'>  {t('go_back.label')} </Button>
+            </Button>&nbsp;
+            <Button variant="dark" href = '/'>  {t('go_back.label')} </Button>
+            </div>
             </Form>
-            {records}
+            {records}&nbsp;
             {pagination}
             </div>
         );

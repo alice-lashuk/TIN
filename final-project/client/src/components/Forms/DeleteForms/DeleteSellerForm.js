@@ -4,10 +4,14 @@ import { withTranslation } from 'react-i18next';
 function DeleteSellerForm(props) {
     let t = props.t;
     return (
+      <div class="container-layout">
+    <div className="container">
+    <div className="d-flex justify-content-center">
+    <div class="form">
       <Form onSubmit={props.submit}>
           <Form.Text className="text-muted">
           {t('delete_warning.label')}
-        </Form.Text>
+        </Form.Text>&nbsp;
         <Form.Group controlId="formId">
           <Form.Label>{t('seller_id.label')}</Form.Label>
           <Form.Control name="Sid" type="text" placeholder="Enter seller id" onChange={props.change}/>
@@ -27,14 +31,18 @@ function DeleteSellerForm(props) {
         <Form.Group controlId="formPosition">
           <Form.Label> {t('seller_position.label')}</Form.Label>
           <Form.Control type="text" name="SPosition" placeholder="Enter position" onChange={props.change} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        </Form.Group>&nbsp;
+        <Button variant="dark" type="submit">
         {t('delete_btn.label')}
-        </Button>
-        <Button variant="primary" href = '/'>
+        </Button>&nbsp;
+        <Button variant="dark" href = '/'>
         {t('go_back.label')}
       </Button>
       </Form>
+      </div>
+      </div>
+      </div>
+      </div>
     );
 }
 
